@@ -1,18 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Navbar.scss';
 
 const Navbar = () => {
   return (
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">Моя Колекція</Link>
-        </li>
-        <li>
-          <Link to="/wishlist">Список побажань</Link>
-        </li>
-      </ul>
-    </nav>
+    <ul>
+      <li>
+        <Link to="/my_collection">Моя колекція</Link>
+      </li>
+      <li>
+        <Link to="/wishlist">Список побажань</Link>
+      </li>
+    </ul>
   );
 };
 
