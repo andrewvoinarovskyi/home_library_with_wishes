@@ -1,22 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar/Navbar';
+import ItemList from './components/ItemList/ItemList';
+import Wishlist from './components/Wishlist/Wishlist';
 
-function App() {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    fetch('/api/up')
-      .then((response) => response.json())
-      .then((data) => setData(data))
-      .catch((error) => console.error('Error fetching data:', error));
-  }, []);
-
+const App = () => {
   return (
-    <div className="app">
-      <h1 className='gfg'>GeeksforGeeks</h1>
-      <h1>Data from API:</h1>
-      <pre>{data ? JSON.stringify(data) : 'Loading...'}</pre>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<ItemList />} />
+        <Route path="/wishlist" element={<Wishlist />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;

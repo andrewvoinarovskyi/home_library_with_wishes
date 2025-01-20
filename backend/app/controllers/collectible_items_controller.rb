@@ -1,6 +1,9 @@
 class CollectibleItemsController < ApplicationController
     def index
       @collectible_items = CollectibleItem.all
+      if params[:status]
+        @collectible_items = @collectible_items.where(status: params[:status])
+      end 
       render json: @collectible_items
     end
   
