@@ -1,0 +1,48 @@
+@use '../../variables';
+
+header {
+  background-color: variables.$secondary-color;
+  font-size: 1.2rem;
+  height: 100%;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 80%;
+  margin: auto;
+  justify-content: space-between;
+  flex-direction: column;
+
+  ul {
+    display: flex;
+
+    li {
+      list-style-type: none;
+      padding: 10px;
+      margin: 0 10px;
+    }
+  }
+
+  a {
+    color: variables.$minor-color;
+    font-weight: bold;
+    text-decoration: inherit;
+
+    &:hover {
+      color: variables.$hover-color;
+    }
+  }
+}
+
+@media screen and (min-width: 767px) {
+  header {
+    height: 70px;
+  }
+
+  nav {
+    flex-direction: row;
+  }
+}

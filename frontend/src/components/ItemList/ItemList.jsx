@@ -11,7 +11,7 @@ const ItemList = () => {
 
   return (
     <div>
-      <h1>Моя Колекція</h1>
+      <h1>Моя колекція</h1>
       <div>
         {items.map((item) => (
           <ItemCard key={item.id} item={item} />
