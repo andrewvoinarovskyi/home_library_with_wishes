@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { fetchWishlist } from '../../api/collectibleItems.js';
 
 const Wishlist = () => {
