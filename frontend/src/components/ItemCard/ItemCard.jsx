@@ -1,8 +1,7 @@
-import React from 'react';
 import './ItemCard.scss';
 
 const categories = {book: 'Книга', game: 'Настільна гра', other: 'Інше'};
-const ItemCard = ({ item }) => {
+const ItemCard = ( item ) => {
   return (
     <div className='card'>
       <div className='pic'>isdnvoi siwn evroivb oiwer nb</div>
