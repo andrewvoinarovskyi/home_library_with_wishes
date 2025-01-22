@@ -4,7 +4,7 @@ import './Navbar.scss';
 
 const Navbar = () => {
   return (
-    <ul>
+    <ul className='no-wrap'>
       <li>
         <Link to="/my_collection">Моя колекція</Link>
       </li>
