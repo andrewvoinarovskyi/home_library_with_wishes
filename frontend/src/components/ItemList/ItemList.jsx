@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './ItemList.scss';
 import { fetchOwned } from '../../api/collectibleItems';
 import ItemCard from '../ItemCard/ItemCard';
 
@@ -12,7 +13,7 @@ const ItemList = () => {
   return (
     <div>
       <h1>Моя колекція</h1>
-      <div>
+      <div className='item-list'>
         {items.map((item) => (
           <ItemCard key={item.id} item={item} />
         ))}

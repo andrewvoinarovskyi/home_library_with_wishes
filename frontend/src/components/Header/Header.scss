@@ -27,12 +27,12 @@ nav {
   }
 
   a {
-    color: variables.$minor-color;
+    color: variables.$accent-color;
     font-weight: bold;
     text-decoration: inherit;
 
     &:hover {
-      color: variables.$hover-color;
+      color: variables.$accent-color;
     }
   }
 }
