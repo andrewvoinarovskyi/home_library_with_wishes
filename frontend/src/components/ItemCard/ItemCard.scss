@@ -7,7 +7,9 @@
   padding: 10%;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
   justify-content: space-between;
+  align-items: flex-start;
   background-color: variables.$accent-color;
   border-radius: 15px;
   box-shadow: 0 0 10px variables.$secondary-color;
