@@ -1,0 +1,89 @@
+{
+  "RSpec": {
+    "coverage": {
+      "C:/Projects/home_library_with_wishes/backend/app/models/collectible_item.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          2,
+          2,
+          2,
+          2,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null
+        ]
+      },
+      "C:/Projects/home_library_with_wishes/backend/app/controllers/collectible_items_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "C:/Projects/home_library_with_wishes/backend/app/jobs/application_job.rb": {
+        "lines": [
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      }
+    },
+    "timestamp": 1738170841
+  }
+}
