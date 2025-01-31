@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './ItemList.scss';
 import { fetchOwned } from '../../api/collectibleItems';
 import ItemCard from '../ItemCard/ItemCard';
