@@ -5,7 +5,7 @@ class CreateCollectibleItems < ActiveRecord::Migration[7.1]
       t.string :category, null: false
       t.integer :priority
       t.integer :notes
-      t.string :status, default: 'owned'
+      t.string :status, null: false, default: 'owned'
 
       t.timestamps
     end
