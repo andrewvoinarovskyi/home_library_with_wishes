@@ -14,7 +14,7 @@ const Wishlist = () => {
       <ul>
         {wishlist.map((item) => (
           <li key={item.id}>
-            {item.priority}. {item.name}
+            {item.priority}. <span className='italic'>{item.name}</span>
           </li>
         ))}
       </ul>

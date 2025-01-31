@@ -27,17 +27,17 @@ nav {
   }
 
   a {
-    color: variables.$minor-color;
+    color: variables.$accent-color;
     font-weight: bold;
     text-decoration: inherit;
 
     &:hover {
-      color: variables.$hover-color;
+      color: variables.$accent-color;
     }
   }
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   header {
     height: 70px;
   }

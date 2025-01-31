@@ -12,3 +12,11 @@
 body {
   background-color: variables.$primary-color;
 }
+
+.italic {
+  font-style: italic;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}

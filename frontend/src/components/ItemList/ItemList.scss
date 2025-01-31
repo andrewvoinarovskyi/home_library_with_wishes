@@ -1,0 +1,16 @@
+.item-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3px;
+  row-gap: 3px;
+}
+
+@media screen and (min-width: 768px) {
+  .item-list {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    column-gap: 3%;
+    row-gap: 20px;
+
+  }
+  
+}
