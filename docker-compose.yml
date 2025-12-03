@@ -29,6 +29,7 @@ services:
       POSTGRES_HOST: postgres
       DATABASE_URL: postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@postgres:5432/home_library_development
       RAILS_MAX_THREADS: 5
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:5173}
     ports:
       - "3000:3000"
     volumes:
