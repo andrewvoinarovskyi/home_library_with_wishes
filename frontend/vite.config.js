@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:3001',
+        target: 'http://backend:3000', // Using the service name from docker-compose.yml
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''), // Removes '/api' from the request path
       },

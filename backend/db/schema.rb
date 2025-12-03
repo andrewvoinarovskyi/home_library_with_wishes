@@ -19,7 +19,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_01_17_212358) do
     t.string "category", null: false
     t.integer "priority"
     t.integer "notes"
-    t.string "status", default: "owned"
+    t.string "status", default: "owned", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

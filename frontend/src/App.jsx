@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header/Header';
 import ItemList from './components/ItemList/ItemList';
-import Wishlist from './components/Wishlist/Wishlist';
+import Wishlist from './components/WishList/WishList';
 import './App.scss';
 
 const App = () => {
