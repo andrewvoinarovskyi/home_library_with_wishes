@@ -1,22 +1,41 @@
-import { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import './ItemList.scss';
 import { fetchOwned } from '../../api/collectibleItems';
 import ItemCard from '../ItemCard/ItemCard';
 
 const ItemList = () => {
-  const [items, setItems] = useState([]);
+  const { data: items = [], isLoading, error } = useQuery({
+    queryKey: ['collectibleItems', 'owned'],
+    queryFn: fetchOwned,
+  });
 
-  useEffect(() => {
-    fetchOwned().then((data) => setItems(data));
-  }, []);
+  if (isLoading) {
+    return (
+      <div>
+        <h1>Моя колекція</h1>
+        <p>Завантаження...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div>
+        <h1>Моя колекція</h1>
+        <p style={{ color: 'red' }}>Помилка: {error.message}</p>
+      </div>
+    );
+  }
 
   return (
     <div>
       <h1>Моя колекція</h1>
       <div className='item-list'>
-        {items.map((item) => (
-          <ItemCard key={item.id} item={item} />
-        ))}
+        {items.length === 0 ? (
+          <p>Колекція порожня</p>
+        ) : (
+          items.map((item) => <ItemCard key={item.id} item={item} />)
+        )}
       </div>
     </div>
   );

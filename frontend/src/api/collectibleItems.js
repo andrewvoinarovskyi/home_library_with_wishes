@@ -1,23 +1,39 @@
-import axios from 'axios';
-
 const API_URL = '/api/collectible_items';
 
 export const fetchCollectibleItems = async () => {
-  const response = await axios.get(API_URL);
-  return response.data;
+  const response = await fetch(API_URL);
+  if (!response.ok) {
+    throw new Error('Failed to fetch items');
+  }
+  return response.json();
 };
 
 export const fetchWishlist = async () => {
-  const response = await axios.get(`${API_URL}?status=wishlist`);
-  return response.data;
+  const response = await fetch(`${API_URL}?status=wishlist`);
+  if (!response.ok) {
+    throw new Error('Failed to fetch wishlist');
+  }
+  return response.json();
 };
 
 export const fetchOwned = async () => {
-  const response = await axios.get(`${API_URL}?status=owned`);
-  return response.data;
+  const response = await fetch(`${API_URL}?status=owned`);
+  if (!response.ok) {
+    throw new Error('Failed to fetch owned items');
+  }
+  return response.json();
 };
 
 export const addCollectibleItem = async (item) => {
-  const response = await axios.post(API_URL, item);
-  return response.data;
+  const response = await fetch(API_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(item),
+  });
+  if (!response.ok) {
+    throw new Error('Failed to add item');
+  }
+  return response.json();
 };

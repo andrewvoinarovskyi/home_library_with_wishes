@@ -1,22 +1,43 @@
-import { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import { fetchWishlist } from '../../api/collectibleItems.js';
 
 const Wishlist = () => {
-  const [wishlist, setWishlist] = useState([]);
+  const { data: wishlist = [], isLoading, error } = useQuery({
+    queryKey: ['collectibleItems', 'wishlist'],
+    queryFn: fetchWishlist,
+  });
 
-  useEffect(() => {
-    fetchWishlist().then((data) => setWishlist(data));
-  }, []);
+  if (isLoading) {
+    return (
+      <div>
+        <h1>Список побажань</h1>
+        <p>Завантаження...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div>
+        <h1>Список побажань</h1>
+        <p style={{ color: 'red' }}>Помилка: {error.message}</p>
+      </div>
+    );
+  }
 
   return (
     <div>
       <h1>Список побажань</h1>
       <ul>
-        {wishlist.map((item) => (
-          <li key={item.id}>
-            {item.priority}. <span className='italic'>{item.name}</span>
-          </li>
-        ))}
+        {wishlist.length === 0 ? (
+          <li>Список побажань порожній</li>
+        ) : (
+          wishlist.map((item) => (
+            <li key={item.id}>
+              {item.priority}. <span className='italic'>{item.name}</span>
+            </li>
+          ))
+        )}
       </ul>
     </div>
   );
