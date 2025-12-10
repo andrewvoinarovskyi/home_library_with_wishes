@@ -1,5 +1,8 @@
 FROM node:25-alpine
 
+# Installing libstdc++ for Node.js
+RUN apk add --no-cache libstdc++
+
 WORKDIR /app
 
 # Copying dependencies files
